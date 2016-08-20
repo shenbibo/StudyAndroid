@@ -40,7 +40,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<AbsView> {
     @Override
     public AbsView onCreateViewHolder(ViewGroup parent, int viewType) {
         //actual the parent view is RecyclerView, so do not use it
-        BaseNode node = ViewCreateFactory.createNode(viewType, context);
+        AbsNode node = ViewCreateFactory.createNode(viewType, context);
         if (node != null) {
             View view = node.createView(node.getContainerView());
             //通过viewType创建对应的ViewHolder，它承担了绑定view，设置监听，设置数据的功能。

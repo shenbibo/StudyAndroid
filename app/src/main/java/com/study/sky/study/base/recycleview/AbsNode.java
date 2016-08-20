@@ -8,13 +8,13 @@ import android.view.ViewGroup;
  * Created by Administrator on 2016/4/18.
  * function:
  */
-public abstract class BaseNode {
+public abstract class AbsNode {
 
     private Context context;
 
     protected ViewGroup container;
 
-    public BaseNode(Context context) {
+    public AbsNode(Context context) {
         this.context = context;
     }
 

@@ -36,7 +36,7 @@ public class ViewCreateFactory {
     /**
      * 保存itemview与Node之间的映射
      */
-    private static HashMap<Class<? extends AbsView>, Class<? extends BaseNode>> ITEM_VIEW_TO_NODE_MAP = new HashMap<>();
+    private static HashMap<Class<? extends AbsView>, Class<? extends AbsNode>> ITEM_VIEW_TO_NODE_MAP = new HashMap<>();
 
     /**
      * 分别存储view-type, bean-type, view-bean的映射
@@ -50,7 +50,7 @@ public class ViewCreateFactory {
     /**
      * 注册ItemView与Node之间的映射关系
      */
-    public static void registerNode(Class<? extends AbsView> clazz, Class<? extends BaseNode> clazz2) {
+    public static void registerNode(Class<? extends AbsView> clazz, Class<? extends AbsNode> clazz2) {
         ITEM_VIEW_TO_NODE_MAP.put(clazz, clazz2);
     }
 
@@ -81,14 +81,14 @@ public class ViewCreateFactory {
      * 通过类型创建对应的Node
      */
     @SuppressWarnings("all")
-    public static BaseNode createNode(int type, Context context) {
+    public static AbsNode createNode(int type, Context context) {
 
-        Class<? extends BaseNode> clazz = ITEM_VIEW_TO_NODE_MAP.get(TYPE_TO_ITEM_VIEW_MAP.get(type));
-        BaseNode node = null;
+        Class<? extends AbsNode> clazz = ITEM_VIEW_TO_NODE_MAP.get(TYPE_TO_ITEM_VIEW_MAP.get(type));
+        AbsNode node = null;
         if (clazz != null) {
 
             try {
-                Constructor<? extends BaseNode> constructor = clazz.getConstructor(Context.class);
+                Constructor<? extends AbsNode> constructor = clazz.getConstructor(Context.class);
                 node = constructor.newInstance(context);
             } catch (NoSuchMethodException e) {
                 // TODO Auto-generated catch block
