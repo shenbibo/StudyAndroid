@@ -7,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.study.sky.study.base.recycleview.model.BaseBean;
-
 
 /**
  * Created by Administrator on 2016/4/18.
@@ -19,34 +17,34 @@ public abstract class AbsView extends RecyclerView.ViewHolder {
 
     protected RecycleViewAdapter.OnItemClickListener listener;
 
-    /**
-     * viewHolder在RecylerView中的位置
-     */
-    protected int position;
+//    /**
+//     * viewHolder在RecylerView中的位置
+//     */
+//    protected int positionInData;
 
 //    protected BaseBean bean;
 
     protected Context context;
 
-    /**
-     * item的父布局容器
-     * */
-    protected ViewGroup parent;
+//    /**
+//     * item的父布局容器
+//     * */
+//    protected ViewGroup parent;
+//
+//    /**
+//     * 设置自定义的父布局容器
+//     * */
+//    protected void setParentContainer(ViewGroup parent){
+//        this.parent = parent;
+//    }
+//
+//    /**
+//     * 子类实现该方法，加载界面布局
+//     * */
+//    protected abstract View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container);
 
     /**
-     * 设置自定义的父布局容器
-     * */
-    protected void setParentContainer(ViewGroup parent){
-        this.parent = parent;
-    }
-
-    /**
-     * 子类实现该方法，加载界面布局
-     * */
-    protected abstract View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container);
-
-    /**
-     * 子类复写该方法初始化子控件，可以在{@link AbsView#onCreateView(LayoutInflater, ViewGroup )}中调用
+     * 子类复写该方法初始化子控件，可以在构造器中调用
      * */
     protected abstract void bindChildrenViews();
 
@@ -56,9 +54,9 @@ public abstract class AbsView extends RecyclerView.ViewHolder {
     protected void bindListeners() {
     }
 
-    public AbsView(View itemView){
-        super(itemView);
-        this.context = itemView.getContext();
+    public AbsView(View itemContentView){
+        super(itemContentView);
+        this.context = itemContentView.getContext();
         bindChildrenViews();
     }
 
@@ -75,23 +73,26 @@ public abstract class AbsView extends RecyclerView.ViewHolder {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.onItemClick(v, position);
+                    //注意这里获取的item在Adapter中的位置采用的方法
+                    //RecyclerView中的item是可以单独删除和插入的，所以item在Adapter中与对应数据在数据源列中的位置都是会变化的，
+                    // 和其对应数据在数据源中的位置可能是对不上的。
+                    listener.onItemClick(v, AbsView.this.getAdapterPosition());
                 }
             });
 
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    listener.onItemLongClick(v, position);
+                    listener.onItemLongClick(v,  AbsView.this.getAdapterPosition());
                     return true;
                 }
             });
         }
     }
 
-    public void setPosition(int position) {
-        this.position = position;
-    }
+//    public void setPositionInData(int position) {
+//        this.positionInData = position;
+//    }
 
     /**
      * <strong>子类复写该方法时，必须先调用其父类方法.  If they do not, an exception will be

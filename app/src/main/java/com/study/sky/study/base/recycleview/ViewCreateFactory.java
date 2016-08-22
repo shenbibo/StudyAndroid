@@ -2,9 +2,8 @@ package com.study.sky.study.base.recycleview;
 
 import android.content.Context;
 import android.util.SparseArray;
+import android.view.LayoutInflater;
 import android.view.View;
-
-import com.study.sky.study.base.recycleview.model.BaseBean;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -81,15 +80,15 @@ public class ViewCreateFactory {
      * 通过类型创建对应的Node
      */
     @SuppressWarnings("all")
-    public static AbsNode createNode(int type, Context context) {
+    public static AbsNode createNode(int type, Context context, LayoutInflater inflater) {
 
         Class<? extends AbsNode> clazz = ITEM_VIEW_TO_NODE_MAP.get(TYPE_TO_ITEM_VIEW_MAP.get(type));
         AbsNode node = null;
         if (clazz != null) {
 
             try {
-                Constructor<? extends AbsNode> constructor = clazz.getConstructor(Context.class);
-                node = constructor.newInstance(context);
+                Constructor<? extends AbsNode> constructor = clazz.getConstructor(Context.class, LayoutInflater.class);
+                node = constructor.newInstance(context, inflater);
             } catch (NoSuchMethodException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();

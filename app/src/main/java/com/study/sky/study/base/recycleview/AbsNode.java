@@ -1,6 +1,7 @@
 package com.study.sky.study.base.recycleview;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -10,17 +11,20 @@ import android.view.ViewGroup;
  */
 public abstract class AbsNode {
 
-    private Context context;
+    protected Context context;
 
     protected ViewGroup container;
 
-    public AbsNode(Context context) {
+    protected LayoutInflater inflater;
+
+    public AbsNode(Context context, LayoutInflater inflater) {
         this.context = context;
+        this.inflater = inflater;
     }
 
     public View getContainerView(){
         return container;
     }
 
-    public abstract View createView(View parent);
+    public abstract View onCreateView(View parent);
 }
