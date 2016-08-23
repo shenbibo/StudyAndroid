@@ -22,9 +22,13 @@ public abstract class AbsNode {
         this.inflater = inflater;
     }
 
-    public View getContainerView(){
+    public void setParentView(ViewGroup container){
+        this.container = container;
+    }
+
+    public ViewGroup getContainerView(){
         return container;
     }
 
-    public abstract View onCreateView(View parent);
+    public abstract View onCreateView(ViewGroup parent);
 }

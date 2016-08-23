@@ -1,5 +1,8 @@
 package com.study.sky.study.utils;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -23,5 +26,10 @@ public final class ActivityUtils {
             ft.add(containerId, fragment);
         }
         ft.commitAllowingStateLoss();
+    }
+
+    public static void startActivity(Context context, Class<? extends Activity> toClass){
+        Intent intent = new Intent(context, toClass);
+        context.startActivity(intent);
     }
 }

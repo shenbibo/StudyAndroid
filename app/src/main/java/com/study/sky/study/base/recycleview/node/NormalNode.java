@@ -20,11 +20,11 @@ public class NormalNode extends AbsNode {
     }
 
     @Override
-    public View onCreateView(View parent) {
-        View rootView = inflater.inflate(R.layout.item_normal_layout, null, false);
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+    public View onCreateView(ViewGroup parent) {
+        View rootView = inflater.inflate(R.layout.item_normal_layout, parent, false);
+//        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 //        ViewGroup.LayoutParams params1 = rootView.getLayoutParams();
-        rootView.setLayoutParams(params);
+//        rootView.setLayoutParams(params);
         return rootView;
     }
 }

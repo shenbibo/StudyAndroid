@@ -2,4 +2,15 @@
 <resources>
     <string name="main_setting">设置</string>
     <string name="no_content">没有内容！</string>
+
+    <!--about activiy-->
+    <string name="git_hub_address_title">GitHub 地址</string>
+    <string name="git_hub_address">https://github.com/shenbibo</string>
+    <string name="csdn_address_title">CSDN 地址</string>
+    <string name="csdn_address">http://blog.csdn.net/s402178946</string>
+
+    <!--setting activity-->
+    <string-array name="setting_item_title">
+        <item>关于</item>
+    </string-array>
 </resources>

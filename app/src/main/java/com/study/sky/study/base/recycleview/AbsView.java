@@ -98,7 +98,7 @@ public abstract class AbsView extends RecyclerView.ViewHolder {
      * <strong>子类复写该方法时，必须先调用其父类方法.  If they do not, an exception will be
      * thrown.</strong>
      */
-    public boolean setData(BaseBean bean){
+    public void setData(BaseBean bean){
         boolean isRightBeanObject = bean.getClass() == ViewCreateFactory.getBeanClass(this.getClass());
         if(!isRightBeanObject){
             Class expectedClass =  ViewCreateFactory.getBeanClass(this.getClass());
@@ -108,7 +108,6 @@ public abstract class AbsView extends RecyclerView.ViewHolder {
                     + "expected bean = " + expectedClass.getSimpleName());
         }
 //        this.bean = bean;
-        return true;
     }
 
 

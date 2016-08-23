@@ -18,6 +18,7 @@ import android.widget.RelativeLayout;
 import com.study.sky.study.R;
 import com.study.sky.study.base.BaseActivity;
 import com.study.sky.study.modules.main.presenter.MainPresenterImpl;
+import com.study.sky.study.modules.setting.view.SettingActivity;
 import com.study.sky.study.utils.ActivityUtils;
 
 /**
@@ -159,6 +160,10 @@ public class MainActivity2 extends BaseActivity {
         view.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
+                int id = item.getItemId();
+                if(id == R.id.main_setting_menu_item){
+                    ActivityUtils.startActivity(MainActivity2.this, SettingActivity.class);
+                }
                 return false;
             }
         });

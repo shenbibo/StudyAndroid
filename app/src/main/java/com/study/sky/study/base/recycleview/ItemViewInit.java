@@ -1,8 +1,11 @@
 package com.study.sky.study.base.recycleview;
 
 import com.study.sky.study.base.recycleview.beans.NormalBean;
+import com.study.sky.study.base.recycleview.beans.SingleLineBean;
 import com.study.sky.study.base.recycleview.node.NormalNode;
+import com.study.sky.study.base.recycleview.node.SingleLineNode;
 import com.study.sky.study.base.recycleview.viewholder.NormalView;
+import com.study.sky.study.base.recycleview.viewholder.SingleLineView;
 
 /**
  * [一句话描述类的作用]
@@ -18,12 +21,14 @@ public final class ItemViewInit {
      * 定义ViewType的名称
      */
     public static final String NORMAL_VIEW = NormalView.class.getSimpleName();
+    public static final String SINGLE_LINE_VIEW = SingleLineView.class.getSimpleName();
 
     /**
      * 注册viewType-itemView之间的关系
      */
     static void registerViewType2ItemView() {
         ViewCreateFactory.registerItemView(NORMAL_VIEW, NormalView.class);
+        ViewCreateFactory.registerItemView(SINGLE_LINE_VIEW, SingleLineView.class);
     }
 
     /**
@@ -31,6 +36,8 @@ public final class ItemViewInit {
      */
     static void registerItemView2Node() {
         ViewCreateFactory.registerNode(NormalView.class, NormalNode.class);
+        ViewCreateFactory.registerNode(SingleLineView.class, SingleLineNode.class);
+
     }
 
     /**
@@ -38,6 +45,7 @@ public final class ItemViewInit {
      */
     static void registerItemView2Bean() {
         ViewCreateFactory.registerBean(NormalView.class, NormalBean.class);
+        ViewCreateFactory.registerBean(SingleLineView.class, SingleLineBean.class);
     }
 
     public static void init() {

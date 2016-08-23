@@ -85,6 +85,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<AbsView> implements
         //actual the parent view is RecyclerView, so do not use it
         AbsNode node = ViewCreateFactory.createNode(viewType, context, inflater);
         if (node != null) {
+            node.setParentView(parent);
             View view = node.onCreateView(node.getContainerView());
             //通过viewType创建对应的ViewHolder，它承担了绑定view，设置监听，设置数据的功能。
             AbsView holder = ViewCreateFactory.createItemView(view, viewType);

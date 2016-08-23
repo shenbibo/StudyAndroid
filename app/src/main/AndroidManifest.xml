@@ -4,7 +4,7 @@
 
     <application
         android:name=".application.StudyApplication"
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -20,6 +20,13 @@
 
         <!--主界面-->
         <activity android:name=".modules.main.view.MainActivity2"/>
+
+        <!--设置界面-->
+        <activity android:name=".modules.setting.view.SettingActivity"/>
+
+        <!--关于界面-->
+        <activity android:name=".modules.setting.view.AboutActivity"/>
+
     </application>
 
 </manifest>

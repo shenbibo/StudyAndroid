@@ -1,39 +1,35 @@
 package com.study.sky.study.base.recycleview.viewholder;
+
 import android.view.View;
 import android.widget.TextView;
 
 import com.study.sky.study.R;
 import com.study.sky.study.base.recycleview.AbsView;
 import com.study.sky.study.base.recycleview.BaseBean;
-import com.study.sky.study.base.recycleview.beans.NormalBean;
+import com.study.sky.study.base.recycleview.beans.SingleLineBean;
 
 /**
  * [一句话描述类的作用]
  * [详述类的功能。]
  * Created by sky on 2016/8/23.
  */
-public class NormalView extends AbsView {
+public class SingleLineView extends AbsView{
 
-    private TextView title;
+    private TextView name;
 
-    private TextView content;
-
-    public NormalView(View itemContentView){
+    public SingleLineView(View itemContentView) {
         super(itemContentView);
     }
 
-
     @Override
     protected void bindChildrenViews() {
-        title = (TextView) itemView.findViewById(R.id.title);
-        content = (TextView) itemView.findViewById(R.id.content);
+        name = (TextView) itemView.findViewById(R.id.setting_item_title);
     }
 
     @Override
     public void setData(BaseBean bean) {
         super.setData(bean);
-        NormalBean normalBean = (NormalBean) bean;
-        title.setText(normalBean.title);
-        content.setText(normalBean.content);
+        SingleLineBean bean1 = (SingleLineBean) bean;
+        name.setText(bean1.name);
     }
 }
