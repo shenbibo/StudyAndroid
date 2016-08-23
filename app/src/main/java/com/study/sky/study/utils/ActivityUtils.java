@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentTransaction;
  * [详述类的功能。]
  * Created by sky on 2016/8/16.
  */
-public final class ActivityUitls {
+public final class ActivityUtils {
 
     /**
      * 添加Fragment，如果对应ID已存在fragment则替换

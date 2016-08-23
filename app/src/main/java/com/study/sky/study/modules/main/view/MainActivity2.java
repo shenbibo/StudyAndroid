@@ -7,21 +7,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.study.sky.study.R;
 import com.study.sky.study.base.BaseActivity;
-import com.study.sky.study.modules.main.presenter.MainContract;
 import com.study.sky.study.modules.main.presenter.MainPresenterImpl;
-import com.study.sky.study.utils.ActivityUitls;
+import com.study.sky.study.utils.ActivityUtils;
 
 /**
  * 主Activity
@@ -58,7 +55,7 @@ public class MainActivity2 extends BaseActivity {
     /**
      * 悬浮button
      */
-    FloatingActionButton addfab;
+    private FloatingActionButton addfab;
 
     /**
      * 给NavigationView绑定监听事件
@@ -93,6 +90,16 @@ public class MainActivity2 extends BaseActivity {
 
         addfab = (FloatingActionButton) findViewById(R.id.fab);
 
+        ////test_code///////////
+//        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.main_list);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        DataProvider provider = new DataProvider();
+//        provider.updateProvider(ItemBeanInjection.createNormalBean(), ItemViewInit.NORMAL_VIEW);
+//        RecycleViewAdapter adapter = new RecycleViewAdapter(this, provider);
+//        recyclerView.setAdapter(adapter);
+
+        /////////test_end/////////
+
         //init Fragment
         MainFragment fragment = MainFragment.newInstance();
 
@@ -100,7 +107,7 @@ public class MainActivity2 extends BaseActivity {
         MainPresenterImpl presenter = new MainPresenterImpl(fragment);
 
         fragment.setPresenter(presenter);
-        ActivityUitls.addFragment(getSupportFragmentManager(), fragment, R.id.container);
+        ActivityUtils.addFragment(getSupportFragmentManager(), fragment, R.id.container);
 
     }
 
