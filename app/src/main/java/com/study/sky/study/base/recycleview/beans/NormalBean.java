@@ -7,7 +7,7 @@ import com.study.sky.study.base.recycleview.BaseBean;
  * [详述类的功能。]
  * Created by sky on 2016/8/23.
  */
-public class NormalBean extends BaseBean {
+public class NormalBean implements BaseBean {
 
     public String title;
 
