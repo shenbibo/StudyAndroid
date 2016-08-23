@@ -3,6 +3,7 @@ package com.study.sky.study.base.recycleview.node;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.study.sky.study.R;
 import com.study.sky.study.base.recycleview.AbsNode;
@@ -21,6 +22,9 @@ public class NormalNode extends AbsNode {
     @Override
     public View onCreateView(View parent) {
         View rootView = inflater.inflate(R.layout.item_normal_layout, null, false);
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        ViewGroup.LayoutParams params1 = rootView.getLayoutParams();
+        rootView.setLayoutParams(params);
         return rootView;
     }
 }
