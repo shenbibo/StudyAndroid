@@ -95,7 +95,7 @@ public class MainActivity2 extends BaseActivity {
 //        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.main_list);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 //        DataProvider provider = new DataProvider();
-//        provider.updateProvider(ItemBeanInjection.createNormalBean(), ItemViewInit.NORMAL_VIEW);
+//        provider.updateProvider(ItemBeanInjection.createNormalBean(), ViewDefine.NORMAL_VIEW);
 //        RecycleViewAdapter adapter = new RecycleViewAdapter(this, provider);
 //        recyclerView.setAdapter(adapter);
 

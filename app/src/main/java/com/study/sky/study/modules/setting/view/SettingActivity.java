@@ -5,15 +5,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.study.sky.study.R;
 import com.study.sky.study.base.BaseActivity;
-import com.study.sky.study.base.recycleview.ItemViewInit;
+import com.study.sky.study.base.recycleview.ViewDefine;
 import com.study.sky.study.base.recycleview.RecycleViewAdapter;
-import com.study.sky.study.base.recycleview.beans.SingleLineBean;
-import com.study.sky.study.base.recycleview.provider.DataProvider;
+import com.study.sky.study.common.beans.SingleLineBean;
+import com.study.sky.study.common.provider.DataProvider;
 import com.study.sky.study.utils.ActivityUtils;
 
 import java.util.ArrayList;
@@ -88,6 +86,6 @@ public class SettingActivity extends BaseActivity {
             bean.name = title;
             beans.add(bean);
         }
-        settingProvider.updateProvider(beans, ItemViewInit.SINGLE_LINE_VIEW);
+        settingProvider.updateProvider(beans, ViewDefine.SINGLE_LINE_VIEW);
     }
 }

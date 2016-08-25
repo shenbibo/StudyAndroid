@@ -1,8 +1,7 @@
 package com.study.sky.study.modules.main.presenter;
 
-import com.study.sky.study.base.recycleview.ItemViewInit;
-import com.study.sky.study.base.recycleview.beans.NormalBean;
-import com.study.sky.study.base.recycleview.provider.DataProvider;
+import com.study.sky.study.base.recycleview.ViewDefine;
+import com.study.sky.study.common.provider.DataProvider;
 
 /**
  * [一句话描述类的作用]
@@ -23,7 +22,7 @@ public class MainPresenterImpl implements MainContract.MainPresenter{
     public DataProvider getDataProvider() {
         if(provider == null){
             provider = new DataProvider();
-            provider.updateProvider(ItemBeanInjection.createNormalBean(), ItemViewInit.NORMAL_VIEW);
+            provider.updateProvider(ItemBeanInjection.createNormalBean(), ViewDefine.NORMAL_VIEW);
         }
         return provider;
     }

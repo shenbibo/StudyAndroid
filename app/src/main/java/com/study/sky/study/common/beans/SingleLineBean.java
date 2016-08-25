@@ -1,4 +1,4 @@
-package com.study.sky.study.base.recycleview.beans;
+package com.study.sky.study.common.beans;
 
 import com.study.sky.study.base.recycleview.BaseBean;
 

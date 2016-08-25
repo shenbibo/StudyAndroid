@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
-import com.study.sky.study.base.recycleview.ItemViewInit;
+import com.study.sky.study.base.recycleview.ViewDefine;
 
 /**
  * Created by sky on 2016/8/7.
@@ -15,7 +15,7 @@ public class StudyApplication extends Application{
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         Log.i(this.getClass().getSimpleName(), "init startTime = " + System.currentTimeMillis());
-        ItemViewInit.init();
+        ViewDefine.init();
         Log.i(this.getClass().getSimpleName(), "init finishTime = " + System.currentTimeMillis());
     }
 }

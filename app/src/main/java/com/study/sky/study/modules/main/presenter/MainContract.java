@@ -2,7 +2,7 @@ package com.study.sky.study.modules.main.presenter;
 
 import com.study.sky.study.base.BasePresenter;
 import com.study.sky.study.base.BaseInterfaceView;
-import com.study.sky.study.base.recycleview.provider.DataProvider;
+import com.study.sky.study.common.provider.DataProvider;
 
 
 /**

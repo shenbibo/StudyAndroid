@@ -1,11 +1,11 @@
-package com.study.sky.study.base.recycleview.viewholder;
+package com.study.sky.study.common.viewholder;
 import android.view.View;
 import android.widget.TextView;
 
 import com.study.sky.study.R;
 import com.study.sky.study.base.recycleview.AbsView;
 import com.study.sky.study.base.recycleview.BaseBean;
-import com.study.sky.study.base.recycleview.beans.NormalBean;
+import com.study.sky.study.common.beans.NormalBean;
 
 /**
  * [一句话描述类的作用]

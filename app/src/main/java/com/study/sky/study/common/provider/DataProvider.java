@@ -1,4 +1,4 @@
-package com.study.sky.study.base.recycleview.provider;
+package com.study.sky.study.common.provider;
 
 
 import com.study.sky.study.base.recycleview.ViewCreateFactory;

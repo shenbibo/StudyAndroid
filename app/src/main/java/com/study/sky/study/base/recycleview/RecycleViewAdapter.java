@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.study.sky.study.base.recycleview.provider.DataProvider;
+import com.study.sky.study.common.provider.DataProvider;
 
 import java.util.List;
 

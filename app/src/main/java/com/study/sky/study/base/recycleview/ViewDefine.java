@@ -1,20 +1,20 @@
 package com.study.sky.study.base.recycleview;
 
-import com.study.sky.study.base.recycleview.beans.NormalBean;
-import com.study.sky.study.base.recycleview.beans.SingleLineBean;
+import com.study.sky.study.common.beans.NormalBean;
+import com.study.sky.study.common.beans.SingleLineBean;
 import com.study.sky.study.base.recycleview.node.NormalNode;
 import com.study.sky.study.base.recycleview.node.SingleLineNode;
-import com.study.sky.study.base.recycleview.viewholder.NormalView;
-import com.study.sky.study.base.recycleview.viewholder.SingleLineView;
+import com.study.sky.study.common.viewholder.NormalView;
+import com.study.sky.study.common.viewholder.SingleLineView;
 
 /**
  * [一句话描述类的作用]
  * [详述类的功能。]
  * Created by sky on 2016/8/19.
  */
-public final class ItemViewInit {
+public final class ViewDefine {
 
-    private ItemViewInit() {
+    private ViewDefine() {
     }
 
     /**

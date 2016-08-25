@@ -1,6 +1,6 @@
 package com.study.sky.study.modules.main.presenter;
 
-import com.study.sky.study.base.recycleview.beans.NormalBean;
+import com.study.sky.study.common.beans.NormalBean;
 
 import java.util.ArrayList;
 import java.util.List;
