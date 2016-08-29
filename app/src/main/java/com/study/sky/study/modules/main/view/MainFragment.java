@@ -1,16 +1,21 @@
 package com.study.sky.study.modules.main.view;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.study.sky.study.R;
 import com.study.sky.study.base.BaseFragment;
-import com.study.sky.study.base.recycleview.RecycleViewAdapter;
+import com.study.sky.study.base.BasePresenter;
+import com.study.sky.study.base.recycrleview.RecyclerViewAdapter;
+import com.study.sky.study.common.itemdecoration.BaseItemDecoration;
 import com.study.sky.study.modules.main.presenter.MainContract;
 
 /**
@@ -22,7 +27,7 @@ public class MainFragment extends BaseFragment implements MainContract.MainView 
 
     private MainContract.MainPresenter presenter;
 
-    private RecycleViewAdapter rvAdapter;
+    private RecyclerViewAdapter rvAdapter;
 
     /**
      * 放置主数据
@@ -62,12 +67,25 @@ public class MainFragment extends BaseFragment implements MainContract.MainView 
     private void initRecycleView(View root){
         mainList = (RecyclerView) root.findViewById(R.id.main_list);
         mainList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        rvAdapter = new RecycleViewAdapter(getActivity(), presenter.getDataProvider());
+        mainList.addItemDecoration(new BaseItemDecoration(-1, 20, 0xFF3F51B5));
+        if(presenter == null){
+            Log.d("MainFragment", "presenter = null");
+        }
+        rvAdapter = new RecyclerViewAdapter(getActivity(), presenter.getDataProvider());
         mainList.setAdapter(rvAdapter);
 
     }
 
-    public void setPresenter(MainContract.MainPresenter presenter) {
-        this.presenter = presenter;
+//    public void setPresenter(MainContract.MainPresenter presenter) {
+//        this.presenter = presenter;
+//    }
+
+    @Override
+    public void setPresenter(BasePresenter presenter) {
+        Log.d("MainFragment", "setPresenter called!!");
+        if(presenter == null){
+            Log.d("MainFragment", "intput presenter = null");
+        }
+        this.presenter = (MainContract.MainPresenter) presenter;
     }
 }

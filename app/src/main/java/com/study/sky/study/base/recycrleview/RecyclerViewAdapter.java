@@ -1,4 +1,4 @@
-package com.study.sky.study.base.recycleview;
+package com.study.sky.study.base.recycrleview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Administrator on 2016/4/18.
  * function:
  */
-public class RecycleViewAdapter extends RecyclerView.Adapter<AbsView> implements DataProvider.OnDataChangedListener {
+public class RecyclerViewAdapter extends RecyclerView.Adapter<AbsView> implements DataProvider.OnDataChangedListener {
 
     public interface OnItemClickListener {
 
@@ -26,7 +26,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<AbsView> implements
         //         * @param itemView          被点击的item对应的View
         //         * @param positionInAdapter item对应的在Adapter中的位置
         //         * @param positionInData    该item对应的bean在数据源列表中的位置
-        //         * @see RecycleViewAdapter#onBindViewHolder(AbsView, int)
+        //         * @see RecyclerViewAdapter#onBindViewHolder(AbsView, int)
         //         */
         //        void onItemClick(View itemView, int positionInAdapter, int positionInData);
         //
@@ -37,7 +37,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<AbsView> implements
         //         * @param itemView          被点击的item对应的View
         //         * @param positionInAdapter item对应的在Adapter中的位置
         //         * @param positionInData    该item对应的bean在数据源列表中的位置
-        //         * @see RecycleViewAdapter#onBindViewHolder(AbsView, int)
+        //         * @see RecyclerViewAdapter#onBindViewHolder(AbsView, int)
         //         */
         //        void onItemLongClick(View itemView, int positionInAdapter, int positionInData);
 
@@ -45,7 +45,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<AbsView> implements
          * 监听点击事件
          * @param itemView 被点击的item对应的View
          * @param position item对应的在Adapter/data中的位置
-         * @see RecycleViewAdapter#onBindViewHolder(AbsView, int)
+         * @see RecyclerViewAdapter#onBindViewHolder(AbsView, int)
          */
         void onItemClick(View itemView, int position);
 
@@ -53,7 +53,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<AbsView> implements
          * 监听item长按监听事件
          * @param itemView 被点击的item对应的View
          * @param position item对应的在Adapter/data中的位置
-         * @see RecycleViewAdapter#onBindViewHolder(AbsView, int)
+         * @see RecyclerViewAdapter#onBindViewHolder(AbsView, int)
          */
         void onItemLongClick(View itemView, int position);
     }
@@ -68,7 +68,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<AbsView> implements
 
 //    private List<DataProvider.BeanWrapper> beans;
 
-    public RecycleViewAdapter(Context context, DataProvider provider) {
+    public RecyclerViewAdapter(Context context, DataProvider provider) {
         this.context = context;
         this.provider = provider;
 //        beans = provider.getData();

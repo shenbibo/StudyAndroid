@@ -8,8 +8,8 @@ import android.view.View;
 
 import com.study.sky.study.R;
 import com.study.sky.study.base.BaseActivity;
-import com.study.sky.study.base.recycleview.ViewDefine;
-import com.study.sky.study.base.recycleview.RecycleViewAdapter;
+import com.study.sky.study.base.recycrleview.RecyclerViewAdapter;
+import com.study.sky.study.base.recycrleview.ViewDefine;
 import com.study.sky.study.common.beans.SingleLineBean;
 import com.study.sky.study.common.provider.DataProvider;
 import com.study.sky.study.utils.ActivityUtils;
@@ -28,7 +28,7 @@ public class SettingActivity extends BaseActivity {
 
     private DataProvider settingProvider;
 
-    private RecycleViewAdapter adapter;
+    private RecyclerViewAdapter adapter;
 
     private String[] itemStrings;
 
@@ -53,7 +53,7 @@ public class SettingActivity extends BaseActivity {
 
     @Override
     protected void initListeners() {
-        adapter.setOnItemClickListener(new RecycleViewAdapter.OnItemClickListener() {
+        adapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int position) {
                 String itemName = ((SingleLineBean) settingProvider.getBeanByPosition(position)).name;
@@ -73,7 +73,7 @@ public class SettingActivity extends BaseActivity {
         settingList = (RecyclerView) findViewById(R.id.setting_list);
         settingList.setLayoutManager(new LinearLayoutManager(this));
         initDataProvider();
-        adapter = new RecycleViewAdapter(this, settingProvider);
+        adapter = new RecyclerViewAdapter(this, settingProvider);
         settingList.setAdapter(adapter);
     }
 

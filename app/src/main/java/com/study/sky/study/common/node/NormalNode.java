@@ -1,4 +1,4 @@
-package com.study.sky.study.base.recycleview.node;
+package com.study.sky.study.common.node;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.study.sky.study.R;
-import com.study.sky.study.base.recycleview.AbsNode;
+import com.study.sky.study.base.recycrleview.AbsNode;
 
 /**
  * [一句话描述类的作用]

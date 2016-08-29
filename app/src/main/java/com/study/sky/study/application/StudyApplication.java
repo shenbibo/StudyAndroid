@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
-import com.study.sky.study.base.recycleview.ViewDefine;
+import com.study.sky.study.base.recycrleview.ViewDefine;
 
 /**
  * Created by sky on 2016/8/7.

@@ -1,6 +1,6 @@
 package com.study.sky.study.modules.main.presenter;
 
-import com.study.sky.study.base.recycleview.ViewDefine;
+import com.study.sky.study.base.recycrleview.ViewDefine;
 import com.study.sky.study.common.provider.DataProvider;
 
 /**
@@ -16,6 +16,7 @@ public class MainPresenterImpl implements MainContract.MainPresenter{
 
     public MainPresenterImpl(MainContract.MainView view){
         this.view = view;
+        this.view.setPresenter(this);
     }
 
     @Override

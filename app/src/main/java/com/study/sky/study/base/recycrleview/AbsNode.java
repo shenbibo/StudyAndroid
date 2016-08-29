@@ -1,4 +1,4 @@
-package com.study.sky.study.base.recycleview;
+package com.study.sky.study.base.recycrleview;
 
 import android.content.Context;
 import android.view.LayoutInflater;

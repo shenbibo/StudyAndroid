@@ -4,8 +4,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.study.sky.study.R;
-import com.study.sky.study.base.recycleview.AbsView;
-import com.study.sky.study.base.recycleview.BaseBean;
+import com.study.sky.study.base.recycrleview.AbsView;
+import com.study.sky.study.base.recycrleview.BaseBean;
 import com.study.sky.study.common.beans.SingleLineBean;
 
 /**

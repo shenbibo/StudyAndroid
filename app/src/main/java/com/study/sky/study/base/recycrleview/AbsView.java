@@ -1,11 +1,8 @@
-package com.study.sky.study.base.recycleview;
+package com.study.sky.study.base.recycrleview;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 
 /**
@@ -15,7 +12,7 @@ import android.view.ViewGroup;
 public abstract class AbsView extends RecyclerView.ViewHolder {
 
 
-    protected RecycleViewAdapter.OnItemClickListener listener;
+    protected RecyclerViewAdapter.OnItemClickListener listener;
 
 //    /**
 //     * viewHolder在RecylerView中的位置
@@ -63,7 +60,7 @@ public abstract class AbsView extends RecyclerView.ViewHolder {
     /**
      * 设置整个item被点击的监听事件
      * */
-    public void setOnItemClickListener(RecycleViewAdapter.OnItemClickListener listener) {
+    public void setOnItemClickListener(RecyclerViewAdapter.OnItemClickListener listener) {
         this.listener = listener;
         setParentViewListeners();
     }

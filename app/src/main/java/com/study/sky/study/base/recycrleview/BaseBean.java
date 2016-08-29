@@ -1,4 +1,4 @@
-package com.study.sky.study.base.recycleview;
+package com.study.sky.study.base.recycrleview;
 
 /**
  * Created by Administrator on 2016/4/18.

@@ -1,8 +1,8 @@
 package com.study.sky.study.common.provider;
 
 
-import com.study.sky.study.base.recycleview.ViewCreateFactory;
-import com.study.sky.study.base.recycleview.BaseBean;
+import com.study.sky.study.base.recycrleview.ViewCreateFactory;
+import com.study.sky.study.base.recycrleview.BaseBean;
 
 import java.util.ArrayList;
 import java.util.List;

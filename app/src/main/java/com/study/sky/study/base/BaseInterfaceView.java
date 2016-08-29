@@ -6,4 +6,5 @@ package com.study.sky.study.base;
  * Created by sky on 2016/8/16.
  */
 public interface BaseInterfaceView {
+    void setPresenter(BasePresenter presenter);
 }

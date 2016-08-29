@@ -1,6 +1,6 @@
 package com.study.sky.study.common.beans;
 
-import com.study.sky.study.base.recycleview.BaseBean;
+import com.study.sky.study.base.recycrleview.BaseBean;
 
 /**
  * [一句话描述类的作用]

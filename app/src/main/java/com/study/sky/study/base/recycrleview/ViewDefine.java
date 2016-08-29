@@ -1,9 +1,9 @@
-package com.study.sky.study.base.recycleview;
+package com.study.sky.study.base.recycrleview;
 
 import com.study.sky.study.common.beans.NormalBean;
 import com.study.sky.study.common.beans.SingleLineBean;
-import com.study.sky.study.base.recycleview.node.NormalNode;
-import com.study.sky.study.base.recycleview.node.SingleLineNode;
+import com.study.sky.study.common.node.NormalNode;
+import com.study.sky.study.common.node.SingleLineNode;
 import com.study.sky.study.common.viewholder.NormalView;
 import com.study.sky.study.common.viewholder.SingleLineView;
 
