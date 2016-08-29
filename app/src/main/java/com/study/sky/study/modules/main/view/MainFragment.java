@@ -68,9 +68,6 @@ public class MainFragment extends BaseFragment implements MainContract.MainView 
         mainList = (RecyclerView) root.findViewById(R.id.main_list);
         mainList.setLayoutManager(new LinearLayoutManager(getActivity()));
         mainList.addItemDecoration(new BaseItemDecoration(-1, 20, 0xFF3F51B5));
-        if(presenter == null){
-            Log.d("MainFragment", "presenter = null");
-        }
         rvAdapter = new RecyclerViewAdapter(getActivity(), presenter.getDataProvider());
         mainList.setAdapter(rvAdapter);
 
@@ -82,10 +79,6 @@ public class MainFragment extends BaseFragment implements MainContract.MainView 
 
     @Override
     public void setPresenter(BasePresenter presenter) {
-        Log.d("MainFragment", "setPresenter called!!");
-        if(presenter == null){
-            Log.d("MainFragment", "intput presenter = null");
-        }
         this.presenter = (MainContract.MainPresenter) presenter;
     }
 }

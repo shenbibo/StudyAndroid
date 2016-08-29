@@ -11,6 +11,7 @@ import com.study.sky.study.base.BaseActivity;
 import com.study.sky.study.base.recycrleview.RecyclerViewAdapter;
 import com.study.sky.study.base.recycrleview.ViewDefine;
 import com.study.sky.study.common.beans.SingleLineBean;
+import com.study.sky.study.common.itemdecoration.BaseItemDecoration;
 import com.study.sky.study.common.provider.DataProvider;
 import com.study.sky.study.utils.ActivityUtils;
 
@@ -72,6 +73,7 @@ public class SettingActivity extends BaseActivity {
     private void initRecyclerView() {
         settingList = (RecyclerView) findViewById(R.id.setting_list);
         settingList.setLayoutManager(new LinearLayoutManager(this));
+        settingList.addItemDecoration(new BaseItemDecoration(-1, 20, 0xFF3F51B5));
         initDataProvider();
         adapter = new RecyclerViewAdapter(this, settingProvider);
         settingList.setAdapter(adapter);

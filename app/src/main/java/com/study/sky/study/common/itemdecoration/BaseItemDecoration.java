@@ -39,20 +39,35 @@ public class BaseItemDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-        int addedHeight = 0;
-        int drawWidth;
+//        int addedHeight = 0;
+//        int drawWidth;
+//        int childCount = parent.getChildCount();
+//        int parentWidth = parent.getWidth();
+//        int startWidthPos;
+//        for (int i = 0; i < childCount; i++) {
+//            View child = parent.getChildAt(i);
+//            //使用该行注释掉的代码会导致分割线固定，不会动态变化，不会随着滑动而上下移动，导致此原因是因为这样会把分割线的坐标写死
+//            //            addedHeight += child.getHeight();
+//            addedHeight = child.getBottom();
+//            drawWidth = width > 0 ? width : child.getWidth();
+//            startWidthPos = (parentWidth - drawWidth) / 2;
+//            c.drawRect(startWidthPos, addedHeight, startWidthPos + drawWidth, addedHeight + height, paint);
+//            //            addedHeight += height;
+//        }
+        drawVertical(c, parent);
+    }
+
+    public void drawVertical(Canvas c, RecyclerView parent) {
+        int left = parent.getPaddingLeft();
+        int right = parent.getWidth() - parent.getPaddingRight();
+
         int childCount = parent.getChildCount();
-        int parentWidth = parent.getWidth();
-        int startWidthPos;
         for (int i = 0; i < childCount; i++) {
             View child = parent.getChildAt(i);
-            addedHeight += child.getHeight();
-            drawWidth = width > 0 ? width : child.getWidth();
-            startWidthPos = (parentWidth - drawWidth) / 2;
-//            mDivider.setBounds(startWidthPos, addedHeight, startWidthPos + drawWidth, addedHeight + height);
-            c.drawRect(startWidthPos, addedHeight, startWidthPos + drawWidth, addedHeight + height, paint);
-//            mDivider.
-            addedHeight += height;
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+            int top = child.getBottom() + params.bottomMargin;
+            int bottom = top + height;
+            c.drawRect(left, top, right, bottom, paint);
         }
     }
 

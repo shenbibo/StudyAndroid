@@ -12,5 +12,18 @@
     <!--setting activity-->
     <string-array name="setting_item_title">
         <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
+        <item>关于</item>
     </string-array>
 </resources>
