@@ -51,11 +51,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<AbsView> implement
 
         /**
          * 监听item长按监听事件
+         *
          * @param itemView 被点击的item对应的View
          * @param position item对应的在Adapter/data中的位置
          * @see RecyclerViewAdapter#onBindViewHolder(AbsView, int)
          */
-        void onItemLongClick(View itemView, int position);
+        boolean onItemLongClick(View itemView, int position);
     }
 
     private Context context;
@@ -66,18 +67,30 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<AbsView> implement
 
     private LayoutInflater inflater;
 
+    private RecyclerView ownRecyclerView;
+
 //    private List<DataProvider.BeanWrapper> beans;
 
     public RecyclerViewAdapter(Context context, DataProvider provider) {
+        this(context, provider, null);
+    }
+
+    public RecyclerViewAdapter(Context context, DataProvider provider, RecyclerView rv) {
         this.context = context;
         this.provider = provider;
-//        beans = provider.getData();
+        //        beans = provider.getData();
         inflater = LayoutInflater.from(context);
+        ownRecyclerView = rv;
         this.provider.setDataChangedListener(this);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
+
+    }
+
+    public void setOwnRecyclerView(RecyclerView rv){
+        this.ownRecyclerView = rv;
     }
 
     @Override
@@ -104,7 +117,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<AbsView> implement
     public void onBindViewHolder(AbsView holder, int position) {
         if (holder != null) {
             //设置全局监听事件, 绑定数据源，该position的位置不能保存具体看该方法的注释
-            holder.setOnItemClickListener(listener);
+//            holder.setOnItemClickListener(listener);
             holder.setData(provider.getBeanByPosition(position));
         }
     }

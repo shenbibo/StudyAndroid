@@ -80,7 +80,7 @@ public abstract class AbsView extends RecyclerView.ViewHolder {
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    listener.onItemLongClick(v,  AbsView.this.getAdapterPosition());
+                    listener.onItemLongClick(v, AbsView.this.getAdapterPosition());
                     return true;
                 }
             });

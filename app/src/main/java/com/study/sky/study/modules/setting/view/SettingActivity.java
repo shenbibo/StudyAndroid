@@ -64,8 +64,8 @@ public class SettingActivity extends BaseActivity {
             }
 
             @Override
-            public void onItemLongClick(View itemView, int position) {
-
+            public boolean onItemLongClick(View itemView, int position) {
+                return false;
             }
         });
     }

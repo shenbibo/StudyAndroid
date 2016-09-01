@@ -3,6 +3,7 @@ package com.study.sky.study.modules.main.view;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,8 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.study.sky.study.R;
+import com.study.sky.study.application.StudyApplication;
 import com.study.sky.study.base.BaseFragment;
 import com.study.sky.study.base.BasePresenter;
+import com.study.sky.study.base.recycrleview.ItemClickListener;
 import com.study.sky.study.base.recycrleview.RecyclerViewAdapter;
 import com.study.sky.study.common.itemdecoration.BaseItemDecoration;
 import com.study.sky.study.modules.main.presenter.MainContract;
@@ -24,6 +27,8 @@ import com.study.sky.study.modules.main.presenter.MainContract;
  * Created by sky on 2016/8/16.
  */
 public class MainFragment extends BaseFragment implements MainContract.MainView {
+
+    private static final String TAG = "MainFragment";
 
     private MainContract.MainPresenter presenter;
 
@@ -40,7 +45,8 @@ public class MainFragment extends BaseFragment implements MainContract.MainView 
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+    {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
         initRecycleView(root);
         return root;
@@ -64,18 +70,37 @@ public class MainFragment extends BaseFragment implements MainContract.MainView 
     /**
      * 初始化recycleView
      */
-    private void initRecycleView(View root){
+    private void initRecycleView(View root) {
         mainList = (RecyclerView) root.findViewById(R.id.main_list);
         mainList.setLayoutManager(new LinearLayoutManager(getActivity()));
         mainList.addItemDecoration(new BaseItemDecoration(-1, 20, 0xFF3F51B5));
-        rvAdapter = new RecyclerViewAdapter(getActivity(), presenter.getDataProvider());
+        rvAdapter = new RecyclerViewAdapter(getActivity(),
+                presenter.getDataProvider());
         mainList.setAdapter(rvAdapter);
 
+        mainList.addOnItemTouchListener(new ItemClickListener(StudyApplication.getApplication(),
+                new ItemClickListener.SimpleOnItemClickListener() {
+                    @Override
+                    public boolean onClick(RecyclerView parent, View view, int position)
+                    {
+                        Snackbar.make(mainList,
+                                "click position = " + position,
+                                Snackbar.LENGTH_SHORT).show();
+                        return true;
+                    }
+
+                    @Override
+                    public void onLongClick(RecyclerView parent, View view, int position) {
+                        Snackbar.make(mainList,
+                                "longClick, parent = " + parent + ", view = " + view + "position = " + position,
+                                Snackbar.LENGTH_SHORT).show();
+                    }
+                }));
     }
 
-//    public void setPresenter(MainContract.MainPresenter presenter) {
-//        this.presenter = presenter;
-//    }
+    //    public void setPresenter(MainContract.MainPresenter presenter) {
+    //        this.presenter = presenter;
+    //    }
 
     @Override
     public void setPresenter(BasePresenter presenter) {
